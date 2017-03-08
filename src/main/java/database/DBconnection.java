@@ -1,8 +1,8 @@
-package com.moviebuddy.database;
-
-import java.sql.*;
+package database;
 
 import org.telegram.telegrambots.logging.BotLogger;
+
+import java.sql.*;
 
 /**
  * @author Greg
@@ -14,10 +14,10 @@ import org.telegram.telegrambots.logging.BotLogger;
 public class DBconnection {
 
     private static final String LOGTAG = "DATABASECONNECTION";
-    private java.sql.Connection currentConection;
+    private Connection currentConection;
 
-    private static final String linkDB = "jdbc:mysql://127.0.0.1:3306/telegram?useUnicode=true&characterEncoding=UTF-8";//?useUnicode=true&characterEncoding=UTF-8
-    private static final String controllerDB = "com.mysql.jdbc.Driver";
+    private static final String linkDB = "jdbc:mysql://127.0.0.1:3306/telegram?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Europe/Moscow";
+    private static final String controllerDB = "com.mysql.cj.jdbc.Driver";
     private static final String userDB = "root";
     private static final String password = "matiss";
 

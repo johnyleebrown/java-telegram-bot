@@ -1,4 +1,4 @@
-package com.moviebuddy.services;
+package services;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -10,7 +10,6 @@ import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONObject;
 import org.telegram.telegrambots.logging.BotLogger;
-
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
@@ -24,35 +23,7 @@ import java.net.URLEncoder;
 
 public class ToCoordinates {
 
-    private static final String LOGTAG = "TOCOORDINATESSERVICE";
-    private static volatile ToCoordinates instance;
-
-    /**
-     * Constructor (private due to singleton pattern)
-     */
-    private ToCoordinates() {
-    }
-
-    /**
-     * Singleton
-     *
-     * @return Return the instance of this class
-     */
-    public static ToCoordinates getInstance() {
-        ToCoordinates currentInstance;
-        if (instance == null) {
-            synchronized (ToCoordinates.class) {
-                if (instance == null) {
-                    instance = new ToCoordinates();
-                }
-                currentInstance = instance;
-            }
-        } else {
-            currentInstance = instance;
-        }
-        return currentInstance;
-    }
-
+    private static final String LOGTAG = "TO COORDINATES SERVICE";
 
     public static double[] getCoord(String address){
 

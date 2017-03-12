@@ -1,3 +1,6 @@
+# Overview
+Bot, that shows the cheapest sessions in the closest cinema by user request, search parameters can be set in settings.
+
 # Demo
 ### Tune distance or price parameters in settings
 ![Settings](https://cloud.githubusercontent.com/assets/10441153/22891932/f05e8b42-f221-11e6-890e-e10165975bc6.gif)

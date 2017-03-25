@@ -1,0 +1,55 @@
+-- MySQL dump 10.13  Distrib 5.7.12, for osx10.9 (x86_64)
+--
+-- Host: localhost    Database: Movie
+-- ------------------------------------------------------
+-- Server version	5.7.14
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `Countries_Movies`
+--
+
+DROP TABLE IF EXISTS `Countries_Movies`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Countries_Movies` (
+  `idCountry` int(11) NOT NULL,
+  `idMovie` int(11) NOT NULL,
+  PRIMARY KEY (`idCountry`,`idMovie`),
+  KEY `fk_Movie_idx` (`idMovie`),
+  KEY `fk_Country_idx` (`idCountry`),
+  CONSTRAINT `fk_Countries_Movies_Country` FOREIGN KEY (`idCountry`) REFERENCES `Common`.`Countries` (`idCountry`) ON UPDATE CASCADE,
+  CONSTRAINT `fk_Countries_Movies_Movie` FOREIGN KEY (`idMovie`) REFERENCES `Movies` (`idMovie`) ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Countries_Movies`
+--
+
+LOCK TABLES `Countries_Movies` WRITE;
+/*!40000 ALTER TABLE `Countries_Movies` DISABLE KEYS */;
+INSERT INTO `Countries_Movies` VALUES (9,373158),(1,425673),(1,461939),(9,463464),(1,468522),(1,557787),(9,557787),(1,602749),(1,623721),(3,623721),(4,623721),(1,726794),(1,743088),(11,743088),(1,756799),(10,762750),(1,784288),(3,784288),(7,784288),(8,784288),(9,784288),(1,786958),(9,786958),(12,786958),(13,786958),(2,814482),(1,818145),(1,841147),(5,882569),(1,893362),(6,893735),(6,899500),(1,918087),(1,919515),(1,928938),(3,928938),(2,954504);
+/*!40000 ALTER TABLE `Countries_Movies` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2016-10-25 22:21:43
